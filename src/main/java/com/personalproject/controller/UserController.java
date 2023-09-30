@@ -9,30 +9,26 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
 
+    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    @PostMapping("/employee")
+    @PostMapping("/user")
     public User saveUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
-    @GetMapping("/employee/{id}")
-    public User getUsserById(@PathVariable("id") String userId) {
+    @GetMapping("/user/{id}")
+    public User getUserById(@PathVariable("id") String userId) {
         return userRepository.getUserById(userId);
     }
 
-    @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/user/{id}")
     public String deleteUserById(@PathVariable("id") String userId) {
         return userRepository.deleteUserById(userId);
     }
 
-    @PutMapping("/employee/{id}")
-    public String updateEmployee(@PathVariable("id") String userId, @RequestBody User user) {
+    @PutMapping("/user/{id}")
+    public String updateUser(@PathVariable("id") String userId, @RequestBody User user) {
         return userRepository.update(userId, user);
     }
 
