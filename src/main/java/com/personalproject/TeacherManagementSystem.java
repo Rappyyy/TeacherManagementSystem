@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DynamoDbSpringbootPracApplication {
+public class TeacherManagementSystem {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DynamoDbSpringbootPracApplication.class, args);
+		SpringApplication.run(TeacherManagementSystem.class, args);
 	}
 
 }
