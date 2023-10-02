@@ -19,13 +19,13 @@ public class UserRepository {
         return user;
     }
 
-    public User getUserById(String userId) {
-    return dynamoDBMapper.load(User.class, userId);
+    public User getUserById(String id) {
+    return dynamoDBMapper.load(User.class, id);
     }
 
-    public String deleteUserById(String userId) {
+    public String deleteUserById(String id) {
 
-    User deleteUser = dynamoDBMapper.load(User.class, userId);
+    User deleteUser = dynamoDBMapper.load(User.class, id);
 
     dynamoDBMapper.delete(deleteUser);
 
@@ -34,7 +34,7 @@ public class UserRepository {
 
     public String update(String userId, User user) {
         dynamoDBMapper.save(user, new DynamoDBSaveExpression()
-                .withExpectedEntry("userId" ,
+                .withExpectedEntry("id" ,
                         new ExpectedAttributeValue(
                                 new AttributeValue().withS(userId)
                         )));

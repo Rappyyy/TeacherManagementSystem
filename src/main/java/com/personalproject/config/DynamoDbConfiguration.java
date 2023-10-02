@@ -32,6 +32,7 @@ public class DynamoDbConfiguration {
                                 new BasicAWSCredentials(
                                 "AKIAYVV7C3PV5O5KPOVJ",
                                 "bG6jtb/vUE4A1DkZI0RXnLw+T9C4oYyPdD3xDgOs"
+
                         ))
                 )
                 .build();
